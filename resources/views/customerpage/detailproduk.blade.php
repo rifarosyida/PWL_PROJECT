@@ -46,7 +46,7 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="single-product-img">
-                        <img src="/storage/{{ $produk->foto_produk }}" width="400" height="550px">
+                        <img src="/storage/{{ $produk->foto_produk }}" alt="foto produk" width="400" height="550px">
 					</div>
 				</div>
 				<div class="col-md-7">

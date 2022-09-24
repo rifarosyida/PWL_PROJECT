@@ -27,7 +27,7 @@ $OD = \App\Models\OrderDetail::where('order_id', $order->id)->get();
     {{-- Menampilkan pesan error --}}
     @if (session()->has('error'))
     <div class="alert alert-danger alert-dismissible fade show p-3" role="alert">
-        <strong>{{ session('error') }} <i class="fa-solid fa-trash-can"></i></strong>
+        <strong>{{ session('error') }} <em class="fa-solid fa-trash-can"></em></strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -78,7 +78,7 @@ $OD = \App\Models\OrderDetail::where('order_id', $order->id)->get();
                                                                 <td>{{ $order ->user -> email }}</td>
                                                             </tr>
                                                             <tr>
-                                                                <th>Jenis Kelamin</td>
+                                                                <th> Jenis Kelamin</td>
                                                                 <td>{{ $order ->user-> jenis_kelamin }}</td>
                                                             </tr>
                                                             <tr>
@@ -163,6 +163,11 @@ $OD = \App\Models\OrderDetail::where('order_id', $order->id)->get();
                 <div class="col-lg-4">
                     <div class="order-details-wrap">
                         <table class="order-details" style="width: 350px">
+                            <caption>
+                                <h6>
+                                    Order Detail
+                                </h6>
+                            </caption>
                             <thead>
                                 <tr>
                                     <th><strong>Produk</strong></th>
@@ -210,7 +215,7 @@ $OD = \App\Models\OrderDetail::where('order_id', $order->id)->get();
                                 style="width: 270px">Selesai!</button>
                             @elseif ($order->status == 1)
                             <label type="hidden" class="boxed-btn text-center border-0 mt-4"
-                            style="width: 350x">Pemesanan Sudah di Bayar!</label>
+                            style="width: 350x">Pemesanan Sudah di Bayar & menunggu Verifikasi!</label>
                             @else
                             <label type="hidden" class="boxed-btn text-center border-0 mt-4"
                             style="width: 350px">Pemesanan Sudah di Bayar & Terverifikasi!</label>

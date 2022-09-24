@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
-// use PDF; 
 
 class ProdukController extends Controller
 {
+    private $indexPage = 'produk.index';
     /**
      * Display a listing of the resource.
      *
@@ -32,11 +32,9 @@ class ProdukController extends Controller
                                     $perPage = 5, $columns = ['*'], $pageName = 'produk'
                                 );
                                 return view('admin.dataproduk', compact('all_produk'));
-        // return view('admin.dataproduk', ['all_produk'=>$all_produk]);
     } else {
         $produk = Produk::with('kategori')->get(); // Mengambil semua isi tabel
         $all_produk = Produk::orderBy('id', 'asc')->paginate(5);
-        $all_cart = Cart::all()->where('user_id',Auth::user()->id);
         return view('admin.dataproduk', ['produk' => $produk, 'all_produk' => $all_produk]);
         
     }
@@ -65,14 +63,14 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama_produk' => 'required',
+            'nama_produk' => 'required|string',
             'foto_produk' => 'nullable',
-            'harga' => 'required',
-            'stok' => 'required',
+            'harga' => 'required|integer',
+            'stok' => 'required|integer',
             'diskon' => 'nullable',
             'deskripsi' => 'required',
-            'kategori_id' => 'required',
-            'supplier_id' => 'required',
+            'kategori_id' => 'required|integer',
+            'supplier_id' => 'required|integer',
         ]);
 
         if($request->file('foto_produk')){
@@ -145,7 +143,7 @@ class ProdukController extends Controller
         Produk::where('id', $produk->id)
         ->update($validatedData);
 
-        return redirect()->route('produk.index')
+        return redirect()->route($this->indexPage)
         ->with('success', 'Produk berhasil diperbarui');
     }
     /**
@@ -161,20 +159,14 @@ class ProdukController extends Controller
         }
 
         Produk::find($produk->id)->delete();
-        return redirect()->route('produk.index')
+        return redirect()->route($this->indexPage)
             ->with('success','Produk berhasil dihapus');
 
      }   
+
      public function cetak_pdf(){
-        $all_produk = Produk::paginate(5);
-        // dd($all_produk);
+        $all_produk = Produk::all();
         $pdf = PDF::loadview('admin.produk_cetakPdf',['all_produk'=>$all_produk]);
         return $pdf->stream();
-
-        // return view ('admin.produk_cetakPdf',['all_produk'=>$all_produk]);
-    //     $pdf->setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif', 'isPhpEnabled' => true, 'isRemoteEnabled' =>true
-    // ]);
-        // return $pdf->download('Laporan_DataBarang.pdf');
-
      }
 }

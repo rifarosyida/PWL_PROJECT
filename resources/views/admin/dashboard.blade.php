@@ -106,13 +106,7 @@
                 <p class="mb-3">
                   <strong> DZ or Dina Zalfa </strong>Fashion eCommerce is a complete eCommerce that provides quality clothes from world-famous brands with up-to-date fashion models.
                   Sell clothes for all genders with all types of clothes. The goods sold in the DZ eCommerce are directly from the brand supplier itself. So, the goods 
-                  are guaranteed original and exclusive.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam porro eaque pariatur, nisi maxime a odio. 
-                  loremAspernatur a libero deserunt modi accusantium quo, cum facere unde itaque quidem est animi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                  Fugiat asperiores aperiam at. Illum autem quo rerum in tempora quia voluptatem ex voluptatibus cupiditate. Vel, laboriosam. Ullam cumque eligendi nihil architecto?
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cumque, quaerat neque enim dolorum odio, harum repudiandae architecto sunt suscipit, adipisci quidem consectetur nobis nihil.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatem nisi non modi, incidunt quisquam impedit necessitatibus consectetur enim alias tenetur obcaecati tempora temporibus 
-                  laudantium id neque aut sint doloremque natus reiciendis fugiat. Animi perspiciatis, dignissimos nemo doloremque incidunt quo explicabo consequuntur optio inventore alias officia repudiandae ut similique a necessitatibus rerum sit eaque deserunt tenetur autem sed cupiditate ipsam iusto. Officia reprehenderit veritatis natus consectetur beatae cum porro amet tenetur exercitationem cumque, rerum quae pariatur. Libero illum doloribus perferendis earum assumenda saepe quisquam, fuga aut. Expedita velit autem repellendus repudiandae, minima nostrum natus sunt doloribus perspiciatis, placeat debitis optio?
+                  are guaranteed original and exclusive.dantium id neque aut sint doloremque natus reiciendis fugiat. Animi perspiciatis, dignissimos nemo doloremque incidunt quo explicabo consequuntur optio inventore alias officia repudiandae ut similique a necessitatibus rerum sit eaque deserunt tenetur autem sed cupiditate ipsam iusto. Officia reprehenderit veritatis natus consectetur beatae cum porro amet tenetur exercitationem cumque, rerum quae pariatur. Libero illum doloribus perferendis earum assumenda saepe quisquam, fuga aut. Expedita velit autem repellendus repudiandae, minima nostrum natus sunt doloribus perspiciatis, placeat debitis optio?
                 </p>
               </div>
             </div>
@@ -121,7 +115,7 @@
           </div>
         </div>
       </div>
- 
+    </div>
     </div>
   </div>
   <!-- / Content -->

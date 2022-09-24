@@ -17,6 +17,7 @@ class CekStatus
     public function handle(Request $request, Closure $next, $statusUser)
     {
         if (in_array($request->user()->status, explode('|', $statusUser))) {
+            // return redirect()->route('login');
             return $next($request);
         }
         abort(403);

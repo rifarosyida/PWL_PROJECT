@@ -50,7 +50,6 @@ class CartController extends Controller
 
         $produk_id = $request->get('produk_id');
         $produk= Produk::where('id',$produk_id)->first();
-        // dd($produk);
         $produk->save();
         Cart::create($validatedData);
         return redirect()->back()->with('success','Produk berhasil ditambahkan!');

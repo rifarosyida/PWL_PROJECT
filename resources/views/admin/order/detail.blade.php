@@ -63,24 +63,29 @@
                 <div class="card">
                     <div class="card-body">
                         <table class="table">
+                            <caption></caption>
                             <tbody>
                                 <tr>
-                                    <th>Daftar pesanan : </th>
+                                    <th scope="col">Daftar pesanan : </th>
                                 </tr>
                                 <tr>
-                                    <th class="text-center">No</th>
-                                    <th class="text-center">Gambar Produk</th>
-                                    <th class="text-center">Nama Produk</th>
-                                    <th class="text-center">Jumlah Pembelian</th>
-                                    <th class="text-center">Harga</th>
+                                    <th id="no" class="text-center">No</th>
+                                    <th id="gambar" class="text-center">Gambar Produk</th>
+                                    <th id="namaproduk" class="text-center">Nama Produk</th>
+                                    <th id="jumlah" class="text-center">Jumlah Pembelian</th>
+                                    <th id="harga" class="text-center">Harga</th>
                                 </tr>
+                                
                                 @foreach ($order->orderDetail as $item)
                                 <tr>
                                     <td class="text-center">{{ $loop ->iteration }}</td>
                                     <td class="text-center"><img src="{{asset('storage/'.$item ->produk->foto_produk)}}" width="100px" height="100px"></td>
                                     <td class="text-center">{{ $item->produk->nama_produk }}</th>
                                     <td class="text-center"> {{ $item->qty }}</td>
-                                    <td class="text-center"> Rp. {{ number_format($item->total) }}</td>
+                                    <td class="text-center"> Rp. {{ number_format(($item->produk->harga * $item->qty) - ($item->produk->harga * $item->qty * $item->produk->diskon)) }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> Total {{ $item->order->total }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

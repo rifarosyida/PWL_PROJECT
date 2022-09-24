@@ -45,7 +45,7 @@
                                         width="200px">
                                     @else
                                     <img src="{{ asset('storage/images/user.png') }}" height="200px" width="200px"
-                                        class="img-preview m-auto rounded-circle">
+                                        class="img-preview m-auto rounded-circle" alt="foto profil">
                                     @endif
                                     <div class="pt-3">
                                         <input class="mb-3 @error('image')is-invalid @enderror" type="file" id="image"

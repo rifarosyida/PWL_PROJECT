@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+    public const userindex ='user.index';
+    // private $userIndex = 'user.index';
     /**
      * Display a listing of the resource.
      *
@@ -65,16 +67,6 @@ class UserController extends Controller
             'alamat' => 'required',
         ]);
 
-        // $validatedData = $request->validate([
-        //     'username' => 'required',
-        //     'foto_profil' => 'nullable',
-        //     'email' => 'required|email|unique:users,email',
-        //     'password' => 'required|confirmed|min:8',
-        //     'status' => 'required',
-        //     'no_hp' => 'required',
-        //     'jenis_kelamin' => 'required',
-        //     'alamat' => 'required',
-        // ]);
         
         $user = new User;
         $user->username = $request->username;
@@ -87,13 +79,8 @@ class UserController extends Controller
         $user->alamat = $request->alamat;
         $user->save();
 
-        // if($request->file('foto_profil')){
-        //     $validatedData['foto_profil'] = $request->file('foto_profil')->store('images', 'public');
-        // }
 
-        // User::create($validatedData);
-
-        return redirect()->route('user.index')
+        return redirect()->route($this->userIndex)
         ->with('success', 'User berhasil ditambahkan');
     }
 
@@ -157,7 +144,6 @@ class UserController extends Controller
         
         $user -> username = $request->username;
         if (!$request->password && !$request->password_confirmation) {
-            // dd('ini ga ganti');
         } else {
             $user->password = bcrypt($request->password);
         }
@@ -168,7 +154,7 @@ class UserController extends Controller
         $user -> alamat = $request->alamat;
         $user -> save();
 
-        return redirect()->route('user.index')
+        return redirect()->route($this->userIndex)
         ->with('success', 'User berhasil diperbarui');
     }
 
@@ -185,7 +171,7 @@ class UserController extends Controller
         }
 
         User::find($user->id)->delete();
-        return redirect()->route('user.index')
+        return redirect()->route($this->userIndex)
             ->with('success','User berhasil dihapus');
     }
 
@@ -208,9 +194,7 @@ class UserController extends Controller
             'foto_profil' => 'image|file',
         ]);
 
-        // dd($validateData);
         $user = User::findOrFail($id);
-        // dd($request->foto_profil);
         if ($request->hasFile('foto_profil')) {
             if ($user->foto && file_exists(storage_path('app/public/storage/'.$user->foto_profil))) {
                 Storage::delete('public/'.$user->foto_profil);

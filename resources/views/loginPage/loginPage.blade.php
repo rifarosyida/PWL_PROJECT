@@ -1,13 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <title>
+    Halaman Login
+  </title>
   @include('loginPage.header')
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Diza</b>Fashion Shop</a>
+    <a href="#"><strong>Diza</strong>Fashion Shop</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
