@@ -9,7 +9,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="nama_produk">Nama Produk</label>
-                    <input type="text" name="nama_produk" class="form-control @error('nama_produk') is-invalid @enderror" required autofocus>
+                    <input type="text" name="nama_produk" class="form-control @error('nama_produk') is-invalid @enderror" autofocus>
                     @error('nama_produk')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="harga">Harga</label>
-                    <input type="number" name="harga" class="form-control @error('harga') is-invalid @enderror" required >
+                    <input type="number" name="harga" class="form-control @error('harga') is-invalid @enderror" >
                     @error('harga')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label for="stok">Stok</label>
-                    <input type="number" name="stok" class="form-control @error('stok') is-invalid @enderror" required >
+                    <input type="number" name="stok" class="form-control @error('stok') is-invalid @enderror" >
                     @error('stok')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="diskon">Diskon</label>
-                    <input type="text" name="diskon" class="form-control @error('diskon') is-invalid @enderror" required >
+                    <input type="text" name="diskon" class="form-control @error('diskon') is-invalid @enderror" >
                     @error('diskon')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -54,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label for="deskripsi">Deskripsi Produk</label>
-                    <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" required></textarea>
+                    <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" ></textarea>
                     @error('deskripsi')
                     <div class="invalid-feedback">
                         {{ $message }}
