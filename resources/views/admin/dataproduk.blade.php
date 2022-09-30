@@ -8,7 +8,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Produk</h3> 
+              <h3 class="card-title" data-id="card-title">Data Produk</h3> 
               <form action="{{ route('produk.index') }}" class="mt-4" method="get">
                 @csrf
                 <div class="row flex-row">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="float-right my-2">
-                            <a class="btn btn-success" href="{{ route('produk.create') }}"> Input Produk</a>
+                            <a class="btn btn-success" href="{{ route('produk.create') }}" data-id="input-produk">Input Produk</a>
                         </div>
                     </div>   
                     <div class="row">
@@ -37,7 +37,7 @@
            
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="table-responsive" class="table table-bordered table-hover">
+              <table id="table-responsive" class="table table-bordered table-hover" data-id="tabel-produk">
                 <thead>
                   <tr>
                       <th scope="col">Id</th>
@@ -66,8 +66,8 @@
                  <td>{{($produk->supplier->nama_supplier)}}</td>
                  <td width="200px">
                  <form action="{{ route('produk.destroy',$produk->id) }}" method="POST" onsubmit="return confirm('Apakah anda yakin menghapus data?')"> 
-                  <a href="{{ route('produk.show',$produk->id)}}" class="btn btn-info"><i class="fa fa-eye"></i></a>  
-                  <a href="{{ route('produk.edit',$produk->id)}}" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i></a>  
+                  <a href="{{ route('produk.show',$produk->id)}}" class="btn btn-info" ><i class="fa fa-eye"></i></a>  
+                  <a href="{{ route('produk.edit',$produk->id)}}" class="btn btn-primary" data-id="edit-produk"><i class="fa fa-pencil-square-o"></i></a>  
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger delete" data-id={{ $produk->id }}><i

@@ -45,24 +45,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </body>
 <script>
-  $('.delete').click( function(){
-      var produkid = $(this).attr('data-id');
-      swal({
-      title: "Yakin?",
-      text: "Kamu akan Menghapus Data Produk dengan id!"+produkid+""
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-      })
-      .then((willDelete) => {
-      if (willDelete) {
-          swal("Data Berhasil di hapus!", {
-          icon: "success",
-          });
-      } else {
-          swal("Data Produk tidak jadi dihapus!");
-      }
-      });
-  });
+  // $('.delete').click( function(){
+  //     var produkid = $(this).attr('data-id');
+  //     swal({
+  //     title: "Yakin?",
+  //     text: "Kamu akan Menghapus Data Produk dengan id!"+produkid+""
+  //     icon: "warning",
+  //     buttons: true,
+  //     dangerMode: true,
+  //     })
+  //     .then((willDelete) => {
+  //     if (willDelete) {
+  //         swal("Data Berhasil di hapus!", {
+  //         icon: "success",
+  //         });
+  //     } else {
+  //         swal("Data Produk tidak jadi dihapus!");
+  //     }
+  //     });
+  // });
 </script>
 </html>

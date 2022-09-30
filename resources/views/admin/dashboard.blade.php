@@ -10,7 +10,7 @@
                 <a href="{{ route('user.index') }}"><i class="fa fa-user-plus" style="font-size:45px;color: #9DD6DF"></i></a>
               </div>
             </div>
-            <span class="fw-semibold d-block mb-1">Pengguna</span>
+            <span class="fw-semibold d-block mb-1" data-id="pengguna">Pengguna</span>
             <span>
               <h3 class="card-title mb-2 d-inline pr-3">{{ $user}}</h3>
               <p class="d-inline">User</p>
@@ -26,7 +26,7 @@
                 <a href="{{ route('kategori.index') }}"><i class="fa fa-list-alt" style="font-size:48px;color: #9DD6DF"></i></a>
               </div>
             </div>
-            <span class="fw-semibold d-block mb-1">Kategori</span>
+            <span class="fw-semibold d-block mb-1" data-id="kategori">Kategori</span>
             <span>
               <h3 class="card-title mb-2 d-inline pr-3">{{ $kategori}}</h3>
               <p class="d-inline">Jenis</p>
@@ -42,7 +42,7 @@
                 <a href="{{ route('produk.index') }}"><i class="fa fa-shopping-cart" style="font-size:48px;color: #9DD6DF"></i></a>
               </div>
             </div>
-            <span class="fw-semibold d-block mb-1">Produk</span>
+            <span class="fw-semibold d-block mb-1" data-id="produk">Produk</span>
             <span>
               <h3 class="card-title mb-2 d-inline pr-3">{{ $produk }}</h3>
               <p class="d-inline">Buah</p>
@@ -58,7 +58,7 @@
                 <a href="{{ route('supplier.index') }}"><i class="fa fa-users" style="font-size:45px;color: #9DD6DF"></i></a>
               </div>
             </div>
-            <span class="fw-semibold d-block mb-1">Supplier</span>
+            <span class="fw-semibold d-block mb-1" data-id="supplier">Supplier</span>
             <span>
               <h3 class="card-title mb-2 d-inline pr-3">{{ $supplier }}</h3>
               <p class="d-inline">Store</p>
@@ -74,7 +74,7 @@
                 <a href="{{ route('order.index') }}"><i class="fa fa-shopping-bag" style="font-size:45px;color: #9DD6DF"></i></a>
               </div>
             </div>
-            <span class="fw-semibold d-block mb-1">Pemesanan</span>
+            <span class="fw-semibold d-block mb-1" data-id="pemesanan">Pemesanan</span>
             <span>
               <h3 class="card-title mb-2 d-inline pr-3">{{ $order }}</h3>
               <p class="d-inline">Order</p>

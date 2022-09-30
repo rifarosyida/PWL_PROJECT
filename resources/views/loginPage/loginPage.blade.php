@@ -11,7 +11,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><strong>Diza</strong>Fashion Shop</a>
+    <a href="#" data-id="title"><strong>Diza</strong>Fashion Shop</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -24,7 +24,7 @@
       @endif      
       
       @if (session()->has('loginError'))
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" data-id="invalid-login">
         <button type="button" class="close" data-dismiss="alert">×</button>	
               {{ session('loginError') }}
           </div>
@@ -69,10 +69,7 @@
 
       <!-- /.social-auth-links -->
 
-      <p class="mb-0">
-        <span class="float-end">Don't have an account? 
-          <a href="/register">Sign Up</a></span>
-      </p>
+      <p class="mb-0" data-id="signup-text"><span class="float-end">Don't have an account?<a href="/register" >Sign Up</a></span></p>
     </div>
     <!-- /.login-card-body -->
   </div>
