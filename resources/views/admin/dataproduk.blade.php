@@ -53,6 +53,9 @@
                   </tr>
               </thead>
               <tbody>
+                @php
+                  $counter = 1;
+                @endphp
                 @foreach($all_produk as  $produk)
                 <tr>
                  <td>{{($produk->id)}}</td>
@@ -66,14 +69,17 @@
                  <td>{{($produk->supplier->nama_supplier)}}</td>
                  <td width="200px">
                  <form action="{{ route('produk.destroy',$produk->id) }}" method="POST" onsubmit="return confirm('Apakah anda yakin menghapus data?')"> 
-                  <a href="{{ route('produk.show',$produk->id)}}" class="btn btn-info" ><i class="fa fa-eye"></i></a>  
+                  <a href="{{ route('produk.show',$produk->id)}}" class="btn btn-info" data-id="{{'btn-edit' . $counter}}"><i class="fa fa-eye"></i></a>  
                   <a href="{{ route('produk.edit',$produk->id)}}" class="btn btn-primary" data-id="edit-produk"><i class="fa fa-pencil-square-o"></i></a>  
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger delete" data-id={{ $produk->id }}><i
+                    <button type="submit" class="btn btn-danger delete" data-id={{ 'delete'. $produk->id }}><i
                       class="fa fa-trash"></i></button>
                 </td>
                 </tr>
+                    @php
+                      $counter++;
+                    @endphp
                    @endforeach
             </tbody>
             </table>
