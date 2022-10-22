@@ -26,12 +26,12 @@ describe("auth spec", () => {
         cy.get("[data-id=pemesanan]").should("have.text", "Pemesanan");
     });
 
-    it("user login with invalid credential", () => {
+    it("user login with invalid email", () => {
         cy.visit("/login");
 
-        cy.get("[data-id=input-email]").type("dija@admin.com");
+        cy.get("[data-id=input-email]").type("dija@.com");
         cy.get("[data-id=input-password]").type("admindiza");
-        cy.get("[data-id=btn-signin]").click();
+        cy.get("[data-id=btn-login]").click();
 
         cy.get("[data-id=invalid-login]").contains(
             "Username atau Password Salah!"
